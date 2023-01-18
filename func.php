@@ -29,6 +29,7 @@ if(isset($_POST['pat_submit']))
         echo "<script>alert('Member added.')</script>";
         echo "<script>window.open('admin-panel.php','_self')</script>";
     }
+
 } 
 if(isset($_POST['tra_submit']))
 {
@@ -49,8 +50,8 @@ if(isset($_POST['pay_submit']))
     $Amount=$_POST['Amount'];
     $customer_id=$_POST['customer_id'];
     $payment_type=$_POST['payment_type'];
-    // $customer_name=$_POST['customer_name'];
-    $query="insert into Payment(Payment_id,Amount,customer_id,payment_type)values('$Payment_id','$Amount','$customer_id','$payment_type')";
+    $customer_name=$_POST['customer_name'];
+    $query="insert into Payment(Payment_id,Amount,customer_id,payment_type,customer_name)values('$Payment_id','$Amount','$customer_id','$payment_type','$customer_name')";
     $result=mysqli_query($con,$query);
     if($result)
     {
@@ -59,19 +60,6 @@ if(isset($_POST['pay_submit']))
     }
 } 
 
-// if(isset($_POST['pac_submit']))
-// {
-//     $Package_id=$_POST['Package_id'];
-//     $Package_name=$_POST['Package_name'];
-//     $Amount=$_POST['Amount'];
-//     $query="insert into Package(Package_id,Package_name,Amount)values('$Package_id','$Package_name','$Amount')";
-//     $result=mysqli_query($con,$query);
-//     if($result)
-//     {
-//         echo "<script>alert('Package added.')</script>";
-//         echo "<script>window.open('admin-panel.php','_self')</script>";
-//     }
-// } 
 
 function get_patient_details(){
     global $con;
@@ -135,7 +123,7 @@ function get_payment(){
         $Amount=$row['Amount'];
         $payment_type=$row['payment_type'];
         $customer_id=$row['customer_id'];
-        /*$customer_name=$row['customer_name'];*/
+        // $customer_name=$row['customer_name'];
         
         echo"<tr>
         <td>$Payment_id</td>

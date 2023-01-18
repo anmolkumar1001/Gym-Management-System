@@ -19,7 +19,7 @@
           <div class="card">
             <img src="images/admin.jpg" class="card-img-top">
             <div class="card-body">
-              <center>
+              <center style="font-family: 'Lobster', cursive;" >
               <!-- <div style = "font-size:2.0rem;margin-bottom: -0.5rem;"><label>Gym Management System</label></div>
               <div style = "font-size:1.2rem;margin-bottom:0.5rem;"><label>Admin Login</label></div> -->
               <h5 style = "font-size:2.0rem;margin-bottom:-0.5rem;">Gym Management System</h5><br>

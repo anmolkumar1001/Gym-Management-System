@@ -27,10 +27,10 @@ $result1 = mysqli_query($connect, $query);
   </head>
   <body>
       
-  <div class="jumbotron" style="border-radius:0;background:url('images/3.jpg');background-size:cover;height:400px;"></div>
+  <div class="jumbotron" style="border-radius:0;background:url('pic/new1.jpg');background-size:cover;height:350px;"></div>
    <div class="container-fluid">
     <div class="row">
-        <div class="col-md-3">
+        <div style="font-family: 'Lobster', cursive;" class="col-md-3">
             <div class="list-group">
                 <a href="" class="list-group-item active">Members</a>
                 <a href="trainer_details.php" class="list-group-item">Member details</a>
@@ -38,8 +38,8 @@ $result1 = mysqli_query($connect, $query);
                 <a href="payment.php" class="list-group-item">Payments</a>
             </div>
             <hr>
-            <div class="list-group">
-              <!-- <a href="trainer.php" class="list-group-item active">Trainer</a> -->
+            <div  style="font-family: 'Lobster', cursive;" class="list-group">
+              <a href="trainer.php" class="list-group-item active">Trainer</a>
               <a href="trainer.php" class="list-group-item active">Trainer details</a>             
               <a href="trainer.php" class="list-group-item active">Add new Trainer</a>
             </div>      
@@ -48,22 +48,22 @@ $result1 = mysqli_query($connect, $query);
             <div class="col-md-8">
             <div class="card">
                 
-     <div class="card-body" style="background-color:#3498DB;color:FFFFFF;">
+     <div class="card-body" style="background-color:#007bff;color:FFFFFF;font-family: 'Lobster', cursive;">
                 <h3>Register new members</h3>
                 </div> 
-                <div class="card-body"></div>
+                <div  style="font-family: 'Lobster', cursive;" class="card-body"></div>
                 <form class="form-group" action="func.php" method="post">
                 
-                    <label>First Name:</label>
+                    <label style="font-family: 'Lobster', cursive;" >First Name:</label>
                 <input type="text" name="fname" class="form-control"><br>
-                    <label>Last Name:</label>
+                    <label style="font-family: 'Lobster', cursive;" >Last Name:</label>
                 <input type="text" name="lname" class="form-control"><br> 
-                    <label>Email</label>
+                    <label style="font-family: 'Lobster', cursive;" >Email</label>
                 <input type="text" name="email" class="form-control"><br>
-                    <label>Member ID</label>
+                    <label style="font-family: 'Lobster', cursive;" >Member ID</label>
                 <input type="text" name="member_id" class="form-control"><br>        
-                    <label>Trainer </label> 
-                <select class="form-control" name="trainer_id">
+                    <label style="font-family: 'Lobster', cursive;" >Trainer </label> 
+                <select class="form-control" name="docapp">
 
             <?php while($row1 = mysqli_fetch_array($result1)):;?>
 
@@ -99,7 +99,7 @@ $result1 = mysqli_query($connect, $query);
                   echo '<form action="includes/index.php" method="POST">
                               
                     </form>
-				              <a href="index.php" class="btn btn-light" style="background-color:#3498DB;color:FFFFFF;align-items: center;
+				              <a href="index.php" class="btn btn-outline-primary" style="color:FFFFFF;align-items: center;
                       /* display: flex; */
                       margin-left: 50%;">Logout</a>';
 							}
