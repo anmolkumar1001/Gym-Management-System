@@ -17,12 +17,8 @@
              </div>
              <div class="col-md-3"><h3 style="font-family: 'Lobster', cursive;" >Members Details</h3></div>
              <div class="col-md-8">
-         <form class="form-group" action="trainer_search.php" method="post">
-          <div class="row">
-   <div style="font-family: 'Lobster', cursive;" class="col-md-10">
-    <input type="text" name="search" class="form-control" placeholder="enter contact"></div>
-              <div class="col-md-2"><input type="submit" name="patient_search_submit" class="btn btn-light" value="Search"> </div></div>           
-                 </form></div></div></div>
+        
+                </div>
      <div class="card-body" style="background-color:darkslategrey;color:#ffffff;">
          <div class="card-body">
     <table class="table table-hover">

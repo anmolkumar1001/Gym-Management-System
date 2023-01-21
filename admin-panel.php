@@ -32,38 +32,47 @@ $result1 = mysqli_query($connect, $query);
     <div class="row">
         <div style="font-family: 'Lobster', cursive;" class="col-md-3">
             <div class="list-group">
-                <a href="" class="list-group-item active">Members</a>
+                <a href="" class="list-group-item active" style="background-color:darkslategrey;border-color:darkslategrey;">Members</a>
                 <a href="trainer_details.php" class="list-group-item">Member details</a>
+            </div>
+            <hr>
+            <div class="list-group">
+                <a href="" class="list-group-item active" style="background-color:darkslategrey;border-color:darkslategrey;">Packages</a>
                 <a href="package.php" class="list-group-item">Package details</a>
-                <a href="payment.php" class="list-group-item">Payments</a>
+            </div>
+            <hr>
+            <div class="list-group">
+                <a href="" class="list-group-item active" style="background-color:darkslategrey;border-color:darkslategrey;">Payments</a>
+                <a href="payment.php" class="list-group-item">Payment details</a>
             </div>
             <hr>
             <div  style="font-family: 'Lobster', cursive;" class="list-group">
-              <a href="trainer.php" class="list-group-item active">Trainer</a>
-              <a href="trainer.php" class="list-group-item active">Trainer details</a>             
-              <a href="trainer.php" class="list-group-item active">Add new Trainer</a>
+              <a href="" class="list-group-item active" style="background-color:darkslategrey;border-color:darkslategrey;">Trainers</a>
+              <a href="trainer.php" class="list-group-item">Trainer details</a>             
+              <a href="trainer.php" class="list-group-item">Add new Trainer</a>
             </div>      
             
+            <hr>
         </div>
             <div class="col-md-8">
             <div class="card">
-                
-     <div class="card-body" style="background-color:#007bff;color:FFFFFF;font-family: 'Lobster', cursive;">
+       
+     <div class="card-body" style="background-color:darkslategrey;color:white;border-color:darkslategrey;font-family: 'Lobster', cursive;">
                 <h3>Register new members</h3>
                 </div> 
                 <div  style="font-family: 'Lobster', cursive;" class="card-body"></div>
-                <form class="form-group" action="func.php" method="post">
+                <form class="form-group" action="func.php" method="post" style="font-family: 'Lobster', cursive;">
                 
-                    <label style="font-family: 'Lobster', cursive;" >First Name:</label>
+                    <label>First Name:</label>
                 <input type="text" name="fname" class="form-control"><br>
-                    <label style="font-family: 'Lobster', cursive;" >Last Name:</label>
+                    <label>Last Name:</label>
                 <input type="text" name="lname" class="form-control"><br> 
-                    <label style="font-family: 'Lobster', cursive;" >Email</label>
+                    <label>Email</label>
                 <input type="text" name="email" class="form-control"><br>
-                    <label style="font-family: 'Lobster', cursive;" >Member ID</label>
+                    <label>Member ID</label>
                 <input type="text" name="member_id" class="form-control"><br>        
-                    <label style="font-family: 'Lobster', cursive;" >Trainer </label> 
-                <select class="form-control" name="docapp">
+                    <label>Trainer </label> 
+                <select class="form-control" name="trainer_id">  
 
             <?php while($row1 = mysqli_fetch_array($result1)):;?>
 
@@ -75,7 +84,6 @@ $result1 = mysqli_query($connect, $query);
         <br>
   <div style = "display:flex; justify-content:center; align-item:center;">                                      
   <input type="submit" class="btn btn-outline-primary" name="pat_submit" value="Register"></div>
-  <a href="func.php" class="btn btn-light"></a>
                     
                     
                 </form>
@@ -101,7 +109,7 @@ $result1 = mysqli_query($connect, $query);
                     </form>
 				              <a href="index.php" class="btn btn-outline-primary" style="color:FFFFFF;align-items: center;
                       /* display: flex; */
-                      margin-left: 50%;">Logout</a>';
+                      margin-left: 50%;font-family: cursive;">Logout</a>';
 							}
 				   
 				    ?>

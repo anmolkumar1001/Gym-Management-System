@@ -6,8 +6,12 @@ Gym Management System provides an easy to use interface for the users and a data
 
 ### Login Page
 
-![login page](/pic/login.png)
+![login page](/pic/ss/admin.png)
 
 ### Members registration page
 
-![Members registration page](/pic/member.png)
+![Members registration page](/pic/ss/member2.png)
+
+### Members details page
+
+![Members deatails page](/pic/ss/member%20details.png)

@@ -1,36 +1,24 @@
 <?php
 $con=mysqli_connect("localhost","root","","loginsystem");
-if(isset($_POST['login_submit'])){
-	$username=$_POST['username'];
-	$password=$_POST['password'];
-	$query="select * from logintb where username='$username' and password='$password'";
-	$result=mysqli_query($con,$query);
-	if(mysqli_num_rows($result)==1)
-	{
-		header("Location:admin-panel.php");
-	}
-	else
-    {
-        echo "<script>alert('error login')</script>";
-        echo "<script>window.open('admin-panel.php','_self')</script>";
-    }
-}
+
+
 if(isset($_POST['pat_submit']))
 {
     $fname=$_POST['fname'];
     $lname=$_POST['lname'];
     $email=$_POST['email'];
-    $contact=$_POST['contact'];
-    $docapp=$_POST['docapp'];
-    $query="insert into doctorapp(fname,lname,email,contact,docapp)values('$fname','$lname','$email','$contact','$docapp')";
+    $member_id=$_POST['member_id'];
+    $trainer_id=$_POST['trainer_id'];
+    $query="insert into Member(fname,lname,email,member_id,trainer_id)values('$fname','$lname','$email','$member_id','$trainer_id')";
     $result=mysqli_query($con,$query);
     if($result)
     {
-        echo "<script>alert('Member added.')</script>";
+        echo "<script>alert('Member Added.')</script>";
         echo "<script>window.open('admin-panel.php','_self')</script>";
     }
 
 } 
+
 if(isset($_POST['tra_submit']))
 {
     $Trainer_id=$_POST['Trainer_id'];
@@ -44,18 +32,34 @@ if(isset($_POST['tra_submit']))
         echo "<script>window.open('admin-panel.php','_self')</script>";
     }
 } 
+
 if(isset($_POST['pay_submit']))
 {
     $Payment_id=$_POST['Payment_id'];
     $Amount=$_POST['Amount'];
     $customer_id=$_POST['customer_id'];
     $payment_type=$_POST['payment_type'];
-    $customer_name=$_POST['customer_name'];
-    $query="insert into Payment(Payment_id,Amount,customer_id,payment_type,customer_name)values('$Payment_id','$Amount','$customer_id','$payment_type','$customer_name')";
+    $query="insert into Payment(Payment_id,Amount,customer_id,payment_type)values('$Payment_id','$Amount','$customer_id','$payment_type')";
     $result=mysqli_query($con,$query);
     if($result)
     {
-        echo "<script>alert('Payment sucessfull.')</script>";
+        echo "<script>alert('Payment Sucessfull.')</script>";
+        echo "<script>window.open('admin-panel.php','_self')</script>";
+    }
+} 
+
+if(isset($_POST['pac_submit']))
+{
+    $Package_id=$_POST['Package_id'];
+    $Package_name=$_POST['Package_name'];
+    $Amount=$_POST['Amount'];
+    $Trainer_id=$_POST['Trainer_id'];
+    $customer_id=$_POST['customer_id'];
+    $query="insert into Package(Package_id,Package_name,Amount,Trainer_id,customer_id)values('$Package_id','$Package_name','$Amount','$Trainer_id','$customer_id')";
+    $result=mysqli_query($con,$query);
+    if($result)
+    {
+        echo "<script>alert('Package Added.')</script>";
         echo "<script>window.open('admin-panel.php','_self')</script>";
     }
 } 
@@ -63,23 +67,24 @@ if(isset($_POST['pay_submit']))
 
 function get_patient_details(){
     global $con;
-    $query="select * from doctorapp";
+    $query="select * from Member";
     $result=mysqli_query($con,$query);
     while ($row=mysqli_fetch_array($result)){
         $fname=$row ['fname'];
         $lname=$row['lname'];
         $email=$row['email'];
-        $contact=$row['contact'];
-        $docapp=$row['docapp'];
+        $member_id=$row['member_id'];
+        $trainer_id=$row['trainer_id'];
       echo "<tr>
         <td>$fname</td>
         <td>$lname</td>
         <td>$email</td>
-        <td>$contact</td>
-        <td>$docapp</td>
+        <td>$member_id</td>
+        <td>$trainer_id</td>
         </tr>";
     }
 }
+
 function get_package(){
     global $con;
     $query="select * from Package";
@@ -88,15 +93,20 @@ function get_package(){
         $Package_id=$row['Package_id'];
         $Package_name=$row['Package_name'];
         $Amount=$row['Amount'];
+        $Trainer_id=$row['Trainer_id'];
+        $customer_id=$row['customer_id'];
         echo "<tr>
         <td>$Package_id</td>
         <td>$Package_name</td>
         <td>$Amount</td>
+        <td>$Trainer_id</td>
+        <td>$customer_id</td>
             
         </tr>";
        
     }
 }
+
 function get_trainer(){
     global $con;
     $query="select * from Trainer";
@@ -114,6 +124,7 @@ function get_trainer(){
 
     }
 }
+
 function get_payment(){
     global $con;
     $query="select * from Payment";

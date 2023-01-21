@@ -20,19 +20,27 @@
             <img src="images/admin.jpg" class="card-img-top">
             <div class="card-body">
               <center style="font-family: 'Lobster', cursive;" >
-              <!-- <div style = "font-size:2.0rem;margin-bottom: -0.5rem;"><label>Gym Management System</label></div>
-              <div style = "font-size:1.2rem;margin-bottom:0.5rem;"><label>Admin Login</label></div> -->
+             
               <h5 style = "font-size:2.0rem;margin-bottom:-0.5rem;">Gym Management System</h5><br>
               <h6 style = "margin-bottom:-0.5rem;">Admin Login</h6><br>
+
+            <!-- for pritnting alert message -->
+              <?php if (isset($_GET['error'])) { ?>
+     		<p style="color: red;" class="error"><?php echo $_GET['error']; ?></p>
+     	<?php } ?>
+
               
-              <form class="form-group" method="POST" action="admin-panel.php">
+              <form class="form-group" method="POST" action="login.php">
                 <div class="row">
                   <div class="col-md-4"><label>Username: </label></div>
-                  <div class="col-md-8"><input type="text" name="username" class="form-control" placeholder="Enter Username" required/></div><br><br>
+                  <div class="col-md-8"><input type="text" name="uname" class="form-control" placeholder="Enter Username" required/></div><br><br>
                   <div class="col-md-4"><label>Password: </label></div>
                   <div class="col-md-8"><input type="password" class="form-control" name="password" placeholder="Enter Password" required/></div><br><br><br>
                 </div>
-                <center><input type="submit" id="inputbtn" name="login_submit" value="Login" class="btn btn-primary"></center>
+                <center>
+                  <input type="submit" id="inputbtn" name="login_submit" value="Login" class="btn btn-primary">
+                  
+                </center>
               </form>
             
               

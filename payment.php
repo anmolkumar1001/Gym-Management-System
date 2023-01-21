@@ -13,7 +13,7 @@
      <div class="card-body" style="background-color:darkslategrey;color:#ffffff;">
          <div class="row">
              <div style="font-family: 'Lobster', cursive;" class="col-md-1">
-    <a href="admin-panel.php" class="btn btn-outline-primary">Go Back</a>
+                <a href="admin-panel.php" class="btn btn-outline-primary">Go Back</a>
              </div>
              <div class="col-md-3"><h3 style="font-family: 'Lobster', cursive;" >Payment Details</h3></div>
              <div class="col-md-8">
@@ -30,7 +30,7 @@
             <th>Amount</th>
             <th>Payment Type</th>
             <th>Customer ID</th>
-           <!-- <th>Customer Name</th>-->
+           
          
         </tr>   
         </thead>
@@ -43,20 +43,20 @@
                 <h3 style="font-family: 'Lobster', cursive;" >Make new Payment</h3>
                 </div> 
                 <div class="card-body"></div>
-                <form class="form-group" action="func.php" method="post">
-                <label style="font-family: 'Lobster', cursive;" >Payment ID</label>
-<input type="text" name="Payment_id" class="form-control"><br>
+            <form class="form-group" action="func.php" method="post" style="font-family: 'Lobster', cursive;">
+                <label>Payment ID</label>
+                <input type="text" name="Payment_id" class="form-control"><br>
  
-                    <label style="font-family: 'Lobster', cursive;" >Amount</label>
-                    <input type="text" name="Amount" class="form-control"><br>
-                    <label style="font-family: 'Lobster', cursive;" >Customer ID</label>
-                    <input type="text" name="customer_id" class="form-control"><br>
-                   <!-- <label>Customer Name</label>
-                    <input type="text" name="customer_name" class="form-control"><br>-->
-                    <label style="font-family: 'Lobster', cursive;" >Payment Type</label>
+                <label>Amount</label>
+                <input type="text" name="Amount" class="form-control"><br>
+                <label>Customer ID</label>
+                <input type="text" name="customer_id" class="form-control"><br>
+                  
+                <label>Payment Type</label>
                     
-<input type="text" name="payment_type" class="form-control"><br> 
-<input type="submit" class="btn btn-primary" name="pay_submit" value="PAY">
+                <input type="text" name="payment_type" class="form-control"><br> 
+                <input type="submit" class="btn btn-primary" name="pay_submit" value="Pay">
+            </from>
      </div>
     </div>
     </div>

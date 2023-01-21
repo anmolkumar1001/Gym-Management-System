@@ -8,8 +8,8 @@
 include("func.php");
 if(isset($_POST['patient_search_submit']))
 {
-    $contact=$_POST['search'];
-     $query="select * from doctorapp where contact='$contact'";
+    $member_id=$_POST['search'];
+     $query="select * from doctorapp where contact='$member_id'";
     $result=mysqli_query($con,$query);
     echo "<div class='container-fluid' style='margin-top:50px;'>
     <div class'card'>
@@ -32,14 +32,14 @@ if(isset($_POST['patient_search_submit']))
         $fname=$row ['fname'];
         $lname=$row['lname'];   
         $email=$row['email'];
-        $contact=$row['contact'];
-        $docapp=$row ['docapp'];
+        $member_id=$row['member_id'];
+        $trainer_id=$row ['trainer_id'];
         echo " <tr>
         <td>$fname</td>
         <td>$lname</td>
         <td>$email</td>
-        <td>$contact</td>
-        <td>$docapp</td>
+        <td>$member_id</td>
+        <td>$trainer_id</td>
         </tr>";
         }
         echo "</tbody></table></div></div></div>";
