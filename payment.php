@@ -45,16 +45,16 @@
                 <div class="card-body"></div>
             <form class="form-group" action="func.php" method="post" style="font-family: 'Lobster', cursive;">
                 <label>Payment ID</label>
-                <input type="text" name="Payment_id" class="form-control"><br>
+                <input type="text" name="Payment_id" class="form-control" required><br>
  
                 <label>Amount</label>
-                <input type="text" name="Amount" class="form-control"><br>
+                <input type="text" name="Amount" class="form-control" required><br>
                 <label>Customer ID</label>
-                <input type="text" name="customer_id" class="form-control"><br>
+                <input type="text" name="customer_id" class="form-control" required><br>
                   
                 <label>Payment Type</label>
                     
-                <input type="text" name="payment_type" class="form-control"><br> 
+                <input type="text" name="payment_type" class="form-control" required><br> 
                 <input type="submit" class="btn btn-primary" name="pay_submit" value="Pay">
             </from>
      </div>

@@ -10,8 +10,8 @@ CREATE TABLE `Member` (
   `fname` varchar(40) NOT NULL,
   `lname` varchar(40) NOT NULL,
   `email` varchar(40) NOT NULL,
-  `contact` varchar(40) NOT NULL,
-  `docapp` varchar(60) NOT NULL
+  `member_id` varchar(40) NOT NULL,
+  `trainer_id` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Insert value in table Member
@@ -123,3 +123,27 @@ CREATE TRIGGER `member_before_update` BEFORE UPDATE ON `member`
 FOR EACH ROW INSERT INTO member_backup SET fname = OLD.fname, lname = OLD.lname, 
 email = OLD.email, member_id = OLD.member_id, trainer_id = OLD.trainer_id
 
+-- Adding Procedure to get all members which have same trainer_id
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `getAllMembers`()
+BEGIN
+    DECLARE fname VARCHAR(40);
+    DECLARE lname VARCHAR(40);
+    DECLARE trainerId VARCHAR(60);
+    DECLARE exit_loop BOOLEAN DEFAULT FALSE;
+    DECLARE members_cursor CURSOR FOR SELECT fname,lname,trainer_id FROM member; 
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET exit_loop = TRUE;
+    OPEN members_cursor;
+    members_loop: LOOP
+          FETCH FROM members_cursor INTO fname,lname,trainerId;
+          IF exit_loop THEN
+             LEAVE members_loop;
+          END IF;
+          IF trainerId = "101" THEN
+          SELECT fname,lname;
+          END IF;
+    END LOOP members_loop;
+    CLOSE members_cursor;
+END$$
+DELIMITER ;

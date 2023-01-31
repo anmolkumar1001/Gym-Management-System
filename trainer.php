@@ -45,11 +45,11 @@
                 <div class="card-body"></div>
             <form class="form-group" action="func.php" method="post" style="font-family: 'Lobster', cursive;">
                 <label>Trainer ID</label>
-                <input type="text" name="Trainer_id" class="form-control"><br>
+                <input type="text" name="Trainer_id" class="form-control" required><br>
                 <label>Name</label>
-                <input type="text" name="Name" class="form-control"><br>
+                <input type="text" name="Name" class="form-control" required><br>
                 <label>Phone</label>
-                <input type="text" name="phone" class="form-control"><br> 
+                <input type="text" name="phone" class="form-control" required><br> 
                 <input type="submit" class="btn btn-primary" name="tra_submit" value="Register">
             </from>
      </div>

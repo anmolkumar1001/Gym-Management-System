@@ -64,13 +64,13 @@ $result1 = mysqli_query($connect, $query);
                 <form class="form-group" action="func.php" method="post" style="font-family: 'Lobster', cursive;">
                 
                     <label>First Name:</label>
-                <input type="text" name="fname" class="form-control"><br>
+                <input type="text" name="fname" class="form-control" required><br>
                     <label>Last Name:</label>
-                <input type="text" name="lname" class="form-control"><br> 
+                <input type="text" name="lname" class="form-control" required><br> 
                     <label>Email</label>
-                <input type="text" name="email" class="form-control"><br>
+                <input type="text" name="email" class="form-control" required><br>
                     <label>Member ID</label>
-                <input type="text" name="member_id" class="form-control"><br>        
+                <input type="text" name="member_id" class="form-control" required><br>        
                     <label>Trainer </label> 
                 <select class="form-control" name="trainer_id">  
 
